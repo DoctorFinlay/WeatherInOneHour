@@ -28,7 +28,9 @@ class MainVC: UIViewController {
         
         if segue.identifier == TO_WEATHER_REPORT {
             let DestViewController : WeatherReportVC = segue.destination as! WeatherReportVC
-            DestViewController.toPass = textField.text!
+            let toPass = textField.text!
+            let trimmed = toPass.trimmingCharacters(in: .whitespaces)
+            DestViewController.toPass = trimmed
         }
         
     }

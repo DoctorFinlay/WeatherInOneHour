@@ -34,6 +34,7 @@ class APIService {
         
         let fullURL = "\(BASE_URL)?APPID=\(API_KEY)&q=\(cityName)"
         print(fullURL)
+        
         Alamofire.request(fullURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             
             if response.result.error == nil {
